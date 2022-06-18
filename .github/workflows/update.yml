@@ -11,4 +11,5 @@ jobs:
           name: "figma.tokens.json"
           json: |
             ${{ github.event.client_payload }}
+      - run: cat figma.tokens.json
       - run: jq . figma.tokens.json
