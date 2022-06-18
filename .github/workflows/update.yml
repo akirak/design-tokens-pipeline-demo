@@ -6,6 +6,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $MESSAGE
-        env:
-          MESSAGE: ${{ github.event.client_payload }}
+      - uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "figma.tokens.json"
+          json: ${{ github.event.client_payload }}
+      - run: jq figma.tokens.json
