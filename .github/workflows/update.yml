@@ -9,6 +9,7 @@ jobs:
       - run: |
           echo "::set-output name=filename::${{ github.event.client_payload.filename }}"
         id: filename
+      - run: mkdir tokens
       - uses: jsdaniell/create-json@1.1.2
         with:
           name: ${{ steps.filename.outputs.filename }}
