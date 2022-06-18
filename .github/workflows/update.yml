@@ -6,11 +6,14 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.client_payload.filename }}
+      - run: |
+          echo "::set-output name=filename::${{ github.event.client_payload.filename }}"
+        id: filename
       - uses: jsdaniell/create-json@1.1.2
         with:
-          name: "figma.tokens.json"
+          name: ${{ steps.filename.outputs.filename }}
+          dir: "tokens/"
           json: |
             ${{ github.event.client_payload.tokens }}
-      - run: cat figma.tokens.json
-      - run: jq . figma.tokens.json
+      - run: |
+          jq . tokens/${{ steps.filename.outputs.filename }}
