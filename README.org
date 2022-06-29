@@ -1,5 +1,5 @@
 This is a personal repository for experimenting with the idea of [[https://specifyapp.com/blog/becoming-a-design-tokens-ambassador][design tokens pipeline]].
 It contains a workflow that can receive design tokens from [[https://www.figma.com/community/plugin/888356646278934516/Design-Tokens][Design Tokens plugin for Figma]] via a webhook and pretty-print the contents.
-It is basically a minimal stripped version of [[https://github.com/lukasoppermann/design-token-transformer][lukasoppermann/design-token-transformer]].
+It is basically a minimum stripped-down version of [[https://github.com/lukasoppermann/design-token-transformer][lukasoppermann/design-token-transformer]].
 
 It would be possible to extend this workflow to convert the tokens into other formats and create a PR with the update.
